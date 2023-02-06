@@ -13,14 +13,15 @@ class Color {
   }
 
   #generateElement() {
+    const colorElement = "";
     if (this.#hsl[2] > 60) {
-      const colorElement = `<div class="color" data-color="#${
+      colorElement = `<div class="color" data-color="#${
         this.#hex
       }" style="background-color: #${this.hex}">
     <p style="color: rgb(0, 0, 0)"${this.hex}</p>
       </div>`;
     } else {
-      const colorElement = `<div class="color" data-color="#${
+      colorElement = `<div class="color" data-color="#${
         this.#hex
       }" style="background-color: #${this.hex}">
     <p style="color: rgb(255, 255, 255)"${this.hex}</p>

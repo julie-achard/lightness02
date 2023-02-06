@@ -31,6 +31,7 @@ formElement.addEventListener("submit", (e) => {
 });
 
 function displayColors(palette) {
+  console.log("bonjour");
   const mainElement = document.querySelector("main");
   const tabColor = [];
   palette.forEach((couleur) => {
