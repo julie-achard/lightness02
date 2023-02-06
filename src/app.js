@@ -41,7 +41,6 @@ function displayColors(palette, inputElement) {
   const headerElement = document.querySelector("header");
   headerElement.classList.add("minimized");
   mainElement.innerHTML = "";
-
   const couleurDegrade = [
     0,
     Math.round(palette.length / 2),
@@ -54,6 +53,7 @@ function displayColors(palette, inputElement) {
   document.body.style.backgrougSize = "400% 400%";
 
   const hsl = convert.hex.hsl(inputElement);
+  console.log(hsl);
 
   document.documentElement.style.setProperty(
     "--shadow-color",
