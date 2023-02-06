@@ -27,11 +27,10 @@ formElement.addEventListener("submit", (e) => {
   }
   const palette = generatePalette(inputElement);
   console.log(inputElement, palette);
-  displayColors(palette);
+  displayColors(palette, inputElement);
 });
 
-function displayColors(palette) {
-  console.log("bonjour");
+function displayColors(palette, inputElement) {
   const mainElement = document.querySelector("main");
   const tabColor = [];
   palette.forEach((couleur) => {
@@ -39,4 +38,25 @@ function displayColors(palette) {
     tabColor.push(color);
     color.display(mainElement);
   });
+  const headerElement = document.querySelector("header");
+  headerElement.classList.add("minimized");
+  mainElement.innerHTML = "";
+
+  const couleurDegrade = [
+    0,
+    Math.round(palette.length / 2),
+    palette.length - 1,
+  ].map((index) => `#${convert.hsl.hex(palette[index])}`);
+
+  document.body.style.backgroug = `linear-gradient(-45deg, ${couleurDegrade.join(
+    ","
+  )})`;
+  document.body.style.backgrougSize = "400% 400%";
+
+  const hsl = convert.hex.hsl(inputElement);
+
+  document.documentElement.style.setProperty(
+    "--shadow-color",
+    hsl[0] + "deg " + hsl[1] + "% " + hsl[2] + "%"
+  );
 }
