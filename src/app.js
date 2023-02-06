@@ -27,6 +27,7 @@ formElement.addEventListener("submit", (e) => {
   }
   const palette = generatePalette(inputElement);
   console.log(inputElement, palette);
+  displayColors(palette);
 });
 
 function displayColors(palette) {
