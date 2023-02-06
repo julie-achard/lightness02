@@ -17,14 +17,14 @@ class Color {
     if (this.#hsl[2] > 60) {
       colorElement = `<div class="color" data-color="#${
         this.#hex
-      }" style="background-color: #${this.hex}">
-    <p style="color: rgb(0, 0, 0)"${this.hex}</p>
+      }" style="background-color: #${this.#hex}">
+    <p style="color: rgb(0, 0, 0)"${this.#hex}</p>
       </div>`;
     } else {
       colorElement = `<div class="color" data-color="#${
         this.#hex
-      }" style="background-color: #${this.hex}">
-    <p style="color: rgb(255, 255, 255)"${this.hex}</p>
+      }" style="background-color: #${this.#hex}">
+    <p style="color: rgb(255, 255, 255)"${this.#hex}</p>
       </div>`;
     }
     return colorElement;
