@@ -13,7 +13,7 @@ class Color {
   }
 
   #generateElement() {
-    const colorElement = "";
+    var colorElement = "";
     if (this.#hsl[2] > 60) {
       colorElement = `<div class="color" data-color="#${
         this.#hex
