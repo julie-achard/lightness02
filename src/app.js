@@ -1,6 +1,6 @@
 import convert, { hex } from "color-convert";
 import Color from "./modules/Color.js";
-import Notyf from "notyf";
+import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 
 const notyf = new Notyf();
