@@ -31,6 +31,7 @@ formElement.addEventListener("submit", (e) => {
 });
 
 function displayColors(palette, inputElement) {
+  mainElement.innerHTML = "";
   const mainElement = document.querySelector("main");
   const tabColor = [];
   palette.forEach((couleur) => {
@@ -40,7 +41,7 @@ function displayColors(palette, inputElement) {
   });
   const headerElement = document.querySelector("header");
   headerElement.classList.add("minimized");
-  mainElement.innerHTML = "";
+
   const couleurDegrade = [
     0,
     Math.round(palette.length / 2),
