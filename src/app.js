@@ -31,8 +31,8 @@ formElement.addEventListener("submit", (e) => {
 });
 
 function displayColors(palette, inputElement) {
-  mainElement.innerHTML = "";
   const mainElement = document.querySelector("main");
+  mainElement.innerHTML = "";
   const tabColor = [];
   palette.forEach((couleur) => {
     const color = new Color(couleur);
