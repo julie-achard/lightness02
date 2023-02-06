@@ -15,11 +15,13 @@ function generatePalette(colorhex) {
 }
 
 const formElement = document.querySelector("form");
-const inputElement = document.querySelector("input");
+
 const hexColorRegex = (hex) => /^#[0-9A-F]{6}$/i.test(hex);
 
 formElement.addEventListener("submit", (e) => {
   e.preventDefault();
+  //Pour récupérer input
+  const inputElement = e.target.firstElementChild.value;
   if (!hexColorRegex(inputElement)) {
     throw new Error(`${inputElement} is not valid`);
   }
