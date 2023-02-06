@@ -47,10 +47,10 @@ function displayColors(palette, inputElement) {
     palette.length - 1,
   ].map((index) => `#${convert.hsl.hex(palette[index])}`);
 
-  document.body.style.backgroug = `linear-gradient(-45deg, ${couleurDegrade.join(
+  document.body.style.background = `linear-gradient(-45deg, ${couleurDegrade.join(
     ","
   )})`;
-  document.body.style.backgrougSize = "400% 400%";
+  document.body.style.backgroundSize = "400% 400%";
 
   const hsl = convert.hex.hsl(inputElement);
   console.log(hsl);
