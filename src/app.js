@@ -1,5 +1,9 @@
 import convert, { hex } from "color-convert";
 import Color from "./modules/Color.js";
+import Notyf from "notyf";
+import "notyf/notyf.min.css";
+
+const notyf = new Notyf();
 
 function generatePalette(colorhex) {
   //on crée un tableau vide
@@ -23,7 +27,7 @@ formElement.addEventListener("submit", (e) => {
   //Pour récupérer input
   const inputElement = e.target.firstElementChild.value;
   if (!hexColorRegex(inputElement)) {
-    throw new Error(`${inputElement} is not valid`);
+    notyf.error("pas bon format");
   }
   const palette = generatePalette(inputElement);
   console.log(inputElement, palette);
@@ -60,4 +64,9 @@ function displayColors(palette, inputElement) {
     "--shadow-color",
     hsl[0] + "deg " + hsl[1] + "% " + hsl[2] + "%"
   );
+  mainElement.addEventListener("click", async (e) => {
+    const couleurCopie = e.target.closest(".color").dataset.color;
+    await navigator.clipboard.writeText(couleurCopie);
+    notyf.success(`${couleurCopie} copié`);
+  });
 }
