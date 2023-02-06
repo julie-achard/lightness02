@@ -28,8 +28,11 @@ formElement.addEventListener("submit", (e) => {
 });
 
 function displayColors(palette) {
+  const mainElement = document.querySelector("main");
   const tabColor = [];
   palette.forEach((couleur) => {
-    tabColor.push(new Color(couleur));
+    const color = new Color(couleur);
+    tabColor.push(color);
+    color.display(mainElement);
   });
 }

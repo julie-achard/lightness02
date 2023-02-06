@@ -9,19 +9,24 @@ class Color {
     this.#hsl = [h, s, l];
     //Transformer hsl en hex
     this.#hex = convert.hsl.hex(this.#hsl);
+    this.#element = this.#generateElement();
   }
 
   #generateElement() {
-    //if(){
-
-    //}else{
-
-    //}
-    this.#element = `<div class="color" data-color="#${
-      this.#hex
-    }" style="background-color: #${this.hex}">
-	<p style="color: rgb(255, 255, 255)">#666666</p>
-    </div>`;
+    if (this.#hsl[2] > 60) {
+      const colorElement = `<div class="color" data-color="#${
+        this.#hex
+      }" style="background-color: #${this.hex}">
+    <p style="color: rgb(0, 0, 0)"${this.hex}</p>
+      </div>`;
+    } else {
+      const colorElement = `<div class="color" data-color="#${
+        this.#hex
+      }" style="background-color: #${this.hex}">
+    <p style="color: rgb(255, 255, 255)"${this.hex}</p>
+      </div>`;
+    }
+    return colorElement;
   }
 
   display(element) {
